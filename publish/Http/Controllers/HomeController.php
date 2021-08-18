@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Pages;
 
 use Inertia\Inertia;
+use Lit\Config\Form\Pages\HomeConfig;
 
 class HomeController
 {

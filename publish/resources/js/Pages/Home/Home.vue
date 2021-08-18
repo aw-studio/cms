@@ -1,20 +1,22 @@
 <template>
-    <AppHead title="Home" />
-    <h1 class="text-xl text-blue-900">{{ message }}</h1>
-    <UiButton>Hello World!</UiButton>
+    <AppHead title="Master" />
+    <LitBlock :block="form.content" :repeatables="repeatables" />
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
+import repeatables from '../content.block';
 export default defineComponent({
     props: {
-        message: {
-            type: String as PropType<string>,
+        form: {
+            type: Object,
             required: true,
         },
     },
     setup(props) {
-        console.log(props.message);
+        return {
+            repeatables,
+        };
     },
 });
 </script>
