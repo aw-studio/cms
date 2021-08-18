@@ -27,7 +27,7 @@ class CmsServiceProvider extends ServiceProvider
         $this->registerCommands();
 
         $this->publishes([
-            __DIR__ . '/../publish/Http/Controllers/MasterController.php'         => app_path('Http/Controllers/Pages/MasterController.php'),
+            __DIR__ . '/../publish/Http/Controllers/HomeController.php'           => app_path('Http/Controllers/Pages/HomeController.php'),
             __DIR__ . '/../publish/Http/Controllers/RootController.php'           => app_path('Http/Controllers/Pages/RootController.php'),
             __DIR__ . '/../publish/Http/Middleware/HandleInertiaRequests.php'     => app_path('Http/Middleware/HandleInertiaRequests.php'),
             __DIR__ . '/../publish/Http/Resources/LitNavigationResource.php'      => app_path('Http/Resources/LitNavigationResource.php'),
