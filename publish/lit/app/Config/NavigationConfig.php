@@ -45,7 +45,7 @@ class NavigationConfig extends Config
             $nav->preset(RootConfig::class, ['icon' => fa('newspaper')]),
         ]);
         $nav->section([
-            $nav->title('Daten Objecte'),
+            $nav->title('Daten Objekte'),
 
             // Crud
         ]);
