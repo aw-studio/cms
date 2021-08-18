@@ -27,12 +27,12 @@ class RootConfig extends PagesConfig
     /**
      * Application route prefix.
      *
-     * @param string|null $locale
+     * @param  string|null $locale
      * @return string
      */
     public function appRoutePrefix(string $locale = null)
     {
-        return "root";
+        return 'root';
     }
 
     /**
@@ -43,15 +43,15 @@ class RootConfig extends PagesConfig
     public function names()
     {
         return [
-            'singular' => 'Root',
-            'plural' => 'Roots'
+            'singular' => 'Seite',
+            'plural'   => 'Weitere Seiten',
         ];
     }
 
     /**
      * Make repeatbles that should be available for pages.
      *
-     * @param Repeatables $rep
+     * @param  Repeatables $rep
      * @return void
      */
     public function repeatables(Repeatables $rep)

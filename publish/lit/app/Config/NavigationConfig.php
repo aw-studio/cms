@@ -42,8 +42,18 @@ class NavigationConfig extends Config
             $nav->title('Seiten'),
 
             $nav->preset(HomeConfig::class)->icon(fa('home')),
-            $nav->preset(MainNavigationConfig::class, ['icon' => fa('list')]),
             $nav->preset(RootConfig::class, ['icon' => fa('newspaper')]),
+        ]);
+        $nav->section([
+            $nav->title('Daten Objecte'),
+
+            // Crud
+        ]);
+        $nav->section([
+            $nav->title('Komponenten'),
+
+            $nav->preset(MainNavigationConfig::class, ['icon' => fa('list')]),
+            // Footer
         ]);
     }
 }

@@ -33,7 +33,7 @@ class MainNavigationConfig extends FormConfig
     public function names()
     {
         return [
-            'singular' => 'MainNavigation',
+            'singular' => 'Hauptnavigation',
         ];
     }
 
