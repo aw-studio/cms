@@ -79,7 +79,7 @@ class InstallCommand extends Command
         $this->updateNodePackages(function ($packages) {
             return [
                 '@aw-studio/vue-lit-block'      => '^1.0',
-                '@aw-studio/vue-lit-image-next' => '^1.0',
+                '@aw-studio/vue-lit-image-next' => '^1.1.2',
                 '@headlessui/vue'               => '^1.4.0',
             ] + $packages;
         });
