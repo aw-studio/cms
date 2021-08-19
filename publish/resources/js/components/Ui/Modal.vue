@@ -67,7 +67,7 @@
                                     text-gray-900
                                 "
                             >
-                                {{ title }}
+                                <slot name="title" />
                             </DialogTitle>
 
                             <slot />
