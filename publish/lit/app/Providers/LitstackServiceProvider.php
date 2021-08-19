@@ -5,6 +5,7 @@ namespace Lit\Providers;
 use Ignite\Crud\Fields\Route;
 use Illuminate\Support\ServiceProvider;
 use Lit\Macros\Form\ContentMacro;
+use Litstack\Pages\Models\Page;
 
 class LitstackServiceProvider extends ServiceProvider
 {
@@ -29,7 +30,7 @@ class LitstackServiceProvider extends ServiceProvider
 
         Route::register('app', function ($collection) {
             $collection->route('Home', 'home', fn ($locale) => route('home'));
-            $collection->route('About', 'about', fn ($locale) => route('about'));
+            Page::collection('root')->get()->addToRouteCollection('Seiten', $collection);
         });
     }
 }

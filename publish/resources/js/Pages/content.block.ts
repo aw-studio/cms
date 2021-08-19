@@ -4,8 +4,8 @@ import Cards from './../components/Repeatables/Cards/Cards.vue'
 import Accordion from './../components/Repeatables/Accordion/Accordion.vue'
 
 export default {
-    text: Text,
-    image: Image,
-    cards: Cards,
-    accordion: Accordion,
+    Text: Text,
+    Image: Image,
+    SectionCards: Cards,
+    Accordion: Accordion,
 };

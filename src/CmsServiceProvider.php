@@ -42,6 +42,8 @@ class CmsServiceProvider extends ServiceProvider
             // Pages
             __DIR__ . '/../publish/lit/app/Config/Pages'           => base_path('lit/app/Config/Pages'),
             __DIR__ . '/../publish/lit/app/Http/Controllers/Pages' => base_path('lit/app/Http/Controllers/Pages'),
+            // Repeatables
+            __DIR__ . '/../publish/lit/app/Repeatables' => base_path('lit/app/Repeatables'),
         ], 'aw-cms');
     }
 

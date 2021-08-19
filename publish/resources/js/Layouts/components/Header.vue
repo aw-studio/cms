@@ -2,15 +2,17 @@
     <header class="py-3 bg-gray-100">
         <div class="container flex items-center justify-between">
             <div>Logo</div>
-            <nav>
-                <Link
-                    :href="link.route"
-                    v-for="(link, index) in mainNavigation.data"
-                    :key="index"
-                >
-                    <pre>{{ link.title }}</pre>
-                </Link>
-                <div class="absolute top-0 right-0">
+            <nav class="flex justify-end">
+                <div class="flex space-x-4">
+                    <Link
+                        :href="link.route"
+                        v-for="(link, index) in mainNavigation.data"
+                        :key="index"
+                    >
+                        {{ link.title }}
+                    </Link>
+                </div>
+                <div class="ml-8">
                     <Localize />
                 </div>
             </nav>
