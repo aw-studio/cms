@@ -3,6 +3,9 @@ import { createInertiaApp } from '@inertiajs/inertia-vue3'
 import DefaultLayout from './Layouts/Default.vue';
 import Components from './components'
 import LitBlock from '@aw-studio/vue-lit-block'
+import LitImage from '@aw-studio/vue-lit-image-next'
+
+import '@aw-studio/vue-lit-image-next/dist/dist/index.css'
 
 createInertiaApp({
     resolve: name => {
@@ -15,6 +18,15 @@ createInertiaApp({
             .use(plugin)
             .use(Components)
             .use(LitBlock)
+            .use(LitImage, {
+                conversions: {
+                    thumb: 10,
+                    sm: 300,
+                    md: 500,
+                    lg: 900,
+                    xl: 1400,
+                },
+            })
             .mount(el)
     },
 })

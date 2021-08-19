@@ -93,6 +93,21 @@ class InstallCommand extends Command
     public function handleLitstackFiles()
     {
         $this->callSilently('vendor:publish', ['--tag' => 'aw-cms', '--force' => true]);
+
+        $lit = config_path('lit.php');
+        if (file_exists($lit)) {
+            $find = "'sm' => [300, 300, 8],";
+            $replace = "'thumb' => [10, 10, 1],
+            'sm' => [300, 300, 8],";
+
+            $file_contents = file_get_contents($lit);
+            $file_contents = str_replace(
+                $find,
+                $replace,
+                $file_contents
+            );
+            file_put_contents($lit, $file_contents);
+        }
     }
 
     /**
