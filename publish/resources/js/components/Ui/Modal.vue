@@ -106,7 +106,11 @@ import {
 } from '@headlessui/vue';
 
 export default {
-    emits: ['close'],
+    emits: {
+        close(payload: boolean) {
+            return payload;
+        },
+    },
     components: {
         TransitionRoot,
         TransitionChild,
@@ -129,7 +133,7 @@ export default {
         },
     },
 
-    setup({}, { emit }) {
+    setup({}, { emit }: { emit: any }) {
         function close(val: Boolean) {
             emit('close', val);
             emit('update:open', val);
