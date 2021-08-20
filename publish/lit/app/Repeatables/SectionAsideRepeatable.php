@@ -45,15 +45,17 @@ class SectionAsideRepeatable extends Repeatable
             ->title('Inhalt')
             ->repeatables(function ($repeatables) {
                 // You cannot add nested blocks here!
-                $repeatables->add(TextRepeatable::class)->button('Text')->icon(fa('align-justify'))->variant('info');
-                $repeatables->add(ImageRepeatable::class)->button('Bild')->icon(fa('image'))->variant('dark');
+                $repeatables->add(TextRepeatable::class)->button('Text')->icon(fa('align-justify'))->variant('secondary');
+                $repeatables->add(ImageRepeatable::class)->button('Bild')->icon(fa('image'))->variant('secondary');
             });
+
         $form->block('aside')
             ->title('Marginalspalte')
             ->repeatables(function ($repeatables) {
                 // You cannot add nested blocks here!
-                $repeatables->add(TextRepeatable::class)->button('Text')->icon(fa('align-justify'))->variant('info');
-                $repeatables->add(ImageRepeatable::class)->button('Bild')->icon(fa('image'))->variant('dark');
-            });
+                $repeatables->add(TextRepeatable::class)->button('Text')->icon(fa('align-justify'))->variant('secondary');
+                $repeatables->add(ImageRepeatable::class)->button('Bild')->icon(fa('image'))->variant('secondary');
+                $repeatables->add(InfoBoxRepeatable::class)->button('Infobox')->icon(fa('info'))->variant('secondary');
+            })->width(5);
     }
 }
