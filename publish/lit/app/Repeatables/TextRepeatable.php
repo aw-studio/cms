@@ -41,7 +41,7 @@ class TextRepeatable extends Repeatable
      */
     public function form(RepeatableForm $form): void
     {
-        $form->input('text')
+        $form->wysiwyg('text')
             ->title('Text');
     }
 }
