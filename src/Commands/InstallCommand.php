@@ -12,7 +12,8 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'cms:install';
+    protected $signature = 'cms:install
+                            {--monolang= : Default single language}';
 
     /**
      * The console command description.
@@ -59,11 +60,15 @@ class InstallCommand extends Command
         $this->installNpmPackages();
         $this->handleLitstackFiles();
 
-        if ($this->confirm('Is it a mulitlanguage project?', false)) {
-            $this->makeMultilingual();
+        if ($this->option('monolang')) {
+            $this->makeMonolingual($this->option('monolang'));
         } else {
-            $locale = $this->choice('What is the default locale?', ['de', 'en'], 'de');
-            $this->makeMonolingual($locale);
+            if ($this->confirm('Is it a mulitlanguage project?', false)) {
+                $this->makeMultilingual();
+            } else {
+                $locale = $this->choice('What is the default locale?', ['de', 'en'], 'de');
+                $this->makeMonolingual($locale);
+            }
         }
 
         $this->comment("\nPlease execute 'npm install && npm run dev'.\n");
