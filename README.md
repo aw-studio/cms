@@ -4,18 +4,7 @@ Bootstrap yout Laravel Application for CMS-usage with litstack, litstack-pages, 
 
 ## Installation
 
-In order to install the private composer packages add the repositories array to your `composer.json` and make shure you have a valid `auth.json` for the litstack store:
-
-```json
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://store.litstack.io"
-        }
-    ],
-```
-
-After that you can download the package via composer:
+In order to install the private composer packages add the repositories array to your `composer.json` and make shure you have a valid `auth.json` for the litstack store. After that you can download the package via composer:
 
 ```bash
 composer require aw-studio/cms
