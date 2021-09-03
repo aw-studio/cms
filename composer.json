@@ -28,7 +28,8 @@
         "inertiajs/inertia-laravel": "^0.4.4",
         "litstack/litstack": "^3.7",
         "litstack/bladesmith": "^1.0",
-        "litstack/pages": "^2.1"
+        "litstack/pages": "^2.1",
+        "litstack/meta": "^2.0"
     },
     "repositories": [
         {

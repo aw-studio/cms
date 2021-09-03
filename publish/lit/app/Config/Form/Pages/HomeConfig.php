@@ -5,9 +5,12 @@ namespace Lit\Config\Form\Pages;
 use Ignite\Crud\Config\FormConfig;
 use Ignite\Crud\CrudShow;
 use Lit\Http\Controllers\Form\Pages\HomeController;
+use Litstack\Meta\Traits\FormHasMeta;
 
 class HomeConfig extends FormConfig
 {
+    use FormHasMeta;
+
     /**
      * Controller class.
      *
@@ -47,6 +50,10 @@ class HomeConfig extends FormConfig
     {
         $page->card(function ($form) {
             $form->contentMacro();
+        });
+
+        $page->card(function ($form) {
+            $form->seo();
         });
     }
 }
