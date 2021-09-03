@@ -46,6 +46,8 @@ class InstallCommand extends Command
         $this->info(' / ___ | |/ |/ /_____/ /___/ /  / /___/ / ');
         $this->info('/_/  |_|__/|__/      \____/_/  /_//____/  ');
 
+        $this->addLitstackStoreToComposerJson();
+
         // install vitt
         $this->callSilently('lit:install');
         $this->callSilently('vitt:install');
@@ -72,6 +74,29 @@ class InstallCommand extends Command
         }
 
         $this->comment("\nPlease execute 'npm install && npm run dev'.\n");
+    }
+
+    /**
+     * Add the litstack store to the composer json when missing.
+     *
+     * @return void
+     */
+    protected function addLitstackStoreToComposerJson()
+    {
+        $path = base_path('composer.json');
+        $store = [
+            'type' => 'composer',
+            'url' => 'https://store.litstack.io'
+        ];
+        $json = json_decode(file_get_contents($path), true);
+
+        if (array_key_exists('repositories', $json) && in_array($store, $json['repositories'])) {
+            return;
+        }
+
+        $json['repositories'] = [$store];
+
+        file_put_contents($path, json_encode($json, JSON_PRETTY_PRINT + JSON_UNESCAPED_SLASHES));
     }
 
     /**
