@@ -30,7 +30,7 @@ class TextRepeatable extends Repeatable
      */
     public function preview(ColumnBuilder $preview): void
     {
-        $preview->col('{text}');
+        $preview->col('{text}')->stripHtml()->maxChars(150);
     }
 
     /**
