@@ -21,7 +21,7 @@
         }
     },
     "require": {
-        "aw-studio/vitt": "0.9",
+        "aw-studio/vitt": "^0.9|^0.10|^0.11",
         "php": "^8.0",
         "guzzlehttp/guzzle": "^7.3",
         "illuminate/support": "^8",
