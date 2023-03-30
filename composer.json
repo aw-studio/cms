@@ -25,7 +25,7 @@
         "php": "^8.0",
         "guzzlehttp/guzzle": "^7.3",
         "illuminate/support": "^8",
-        "inertiajs/inertia-laravel": "^0.4.4",
+        "inertiajs/inertia-laravel": "^0.4|^0.5|^0.6",
         "litstack/litstack": "^3.7",
         "litstack/bladesmith": "^1.0",
         "litstack/pages": "^2.1",
